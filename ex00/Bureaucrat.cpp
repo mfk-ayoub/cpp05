@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/15 13:30:47 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:50:53 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,48 @@
 
 
 Bureaucrat::Bureaucrat()
-    : _name("default"), _grade(0)
+    : _name("Edward Newgate"), _grade(1)
 {
     
 }
 //~~~~~~~~~~~~~~~~~~~~
 
-Bureaucrat::Bureaucrat(int _grade)
-    : _name("default"), _grade(_grade)
+Bureaucrat::Bureaucrat(int grade)
+    : _name("Edward Newgate")
 {
+    if (_grade < 1)
+        throw GradeTooHighException();
+    else if (_grade > 150)
+        throw GradeTooLowException();
+    else
+        this->_grade = grade;
     
 }
 //~~~~~~~~~~~~~~~~~~~~
 
 Bureaucrat::Bureaucrat(const std::string _name)
-: _name(_name), _grade(0)
+: _name(_name), _grade(1)
 {
     
 }
 //~~~~~~~~~~~~~~~~~~~~
 
-Bureaucrat::Bureaucrat(int _grade, const std::string _name)
-: _name(_name), _grade(_grade)
+Bureaucrat::Bureaucrat(int grade, const std::string _name)
+: _name(_name)
 {
-    
+    if (_grade < 1)
+        throw GradeTooHighException();
+    else if (_grade > 150)
+        throw GradeTooLowException();
+    else
+        this->_grade = grade;
 }
 //~~~~~~~~~~~~~~~~~~~~
 
 void Bureaucrat::Increment()
 {
     std::cout << "Increment grade of " << getName() << std::endl;
-    _grade += 1;   
+    _grade -= 1;   
 }
 //~~~~~~~~~~~~~~~~~~~~
 
@@ -53,7 +64,7 @@ void Bureaucrat::Decrement()
 {
     std::cout << "Decrement grade of " << getName() << std::endl;
 
-    _grade -= 1;   
+    _grade += 1;   
 }
 //~~~~~~~~~~~~~~~~~~~~
 
@@ -75,6 +86,11 @@ std::string  Bureaucrat::getName() const
 //~~~~~~~~~~~~~~~~~~~~
 
 
+std::ostream& operator<< (std::ostream& os,const Bureaucrat& b)
+{
+    return (os << b.getName()<< " , bureaucrat grade " << b.getGrade());
+}
+//~~~~~~~~~~~~~~~~~~~~
 int Bureaucrat::getGrade() const
 {
     return (_grade);   
