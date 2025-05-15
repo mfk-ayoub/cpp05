@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:12:27 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/15 11:19:15 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:55:08 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int main(void)
     Bureaucrat b;
 
     std::cout << b.getName() << std::endl;
-    
+    b.Decrement();
     return (0);
 }

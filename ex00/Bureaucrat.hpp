@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:04:19 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/15 11:18:02 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:29:25 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class Bureaucrat
 {
@@ -27,6 +28,14 @@ class Bureaucrat
     Bureaucrat(int _grade,const std::string _name);
     void Increment();
     void Decrement();
+    class GradeTooHighException : public std::exception
+    {
+        virtual const char* what() const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+        virtual const char* what() const throw();
+    };
     std::string  getName() const;
     int getGrade() const;
     ~Bureaucrat();
