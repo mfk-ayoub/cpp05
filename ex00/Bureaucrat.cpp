@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/15 16:50:53 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:50:06 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(int grade)
     : _name("Edward Newgate")
 {
-    if (_grade < 1)
+    if (grade < 1)
         throw GradeTooHighException();
-    else if (_grade > 150)
+    else if (grade > 150)
         throw GradeTooLowException();
     else
         this->_grade = grade;
-    
 }
+
 //~~~~~~~~~~~~~~~~~~~~
 
 Bureaucrat::Bureaucrat(const std::string _name)
@@ -44,9 +44,9 @@ Bureaucrat::Bureaucrat(const std::string _name)
 Bureaucrat::Bureaucrat(int grade, const std::string _name)
 : _name(_name)
 {
-    if (_grade < 1)
+     if (grade < 1)
         throw GradeTooHighException();
-    else if (_grade > 150)
+    else if (grade > 150)
         throw GradeTooLowException();
     else
         this->_grade = grade;
@@ -55,16 +55,29 @@ Bureaucrat::Bureaucrat(int grade, const std::string _name)
 
 void Bureaucrat::Increment()
 {
-    std::cout << "Increment grade of " << getName() << std::endl;
-    _grade -= 1;   
+    if (_grade < 1)
+        throw GradeTooHighException();
+    else if (_grade > 150)
+        throw GradeTooLowException();
+    else
+    {
+        std::cout << "Increment grade of " << getName() << std::endl;
+        _grade -= 1;
+    }   
 }
 //~~~~~~~~~~~~~~~~~~~~
 
 void Bureaucrat::Decrement()
 {
-    std::cout << "Decrement grade of " << getName() << std::endl;
-
-    _grade += 1;   
+    if (_grade < 1)
+        throw GradeTooHighException();
+    else if (_grade > 150)
+        throw GradeTooLowException();
+    else
+    {
+        std::cout << "Decrement grade of " << getName() << std::endl;
+        _grade += 1;
+    }
 }
 //~~~~~~~~~~~~~~~~~~~~
 
@@ -88,6 +101,7 @@ std::string  Bureaucrat::getName() const
 
 std::ostream& operator<< (std::ostream& os,const Bureaucrat& b)
 {
+ 
     return (os << b.getName()<< " , bureaucrat grade " << b.getGrade());
 }
 //~~~~~~~~~~~~~~~~~~~~

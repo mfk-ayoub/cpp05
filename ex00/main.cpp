@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:12:27 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/15 16:51:39 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:50:27 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,67 @@
 
 int main(void)
 {
-    Bureaucrat b;
+    {
+        try
+        {
+            Bureaucrat b;
+            b.Decrement();
+            b.Decrement();
+            std::cout << b << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+        }   
+    }
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+    {
+    try
+        {
+            Bureaucrat yonko(0,"shanks");
+            std::cout << yonko << std::endl;
 
-    std::cout << b.getName() << std::endl;
-    b.Decrement();
-    b.Decrement();
-    std::cout << b << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+    }
+     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+    {
+    try
+        {
+            Bureaucrat yonko(151,"baggi");
+            std::cout << yonko << std::endl;
+
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+    }
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+    {
+    try
+        {
+            Bureaucrat yonko(2,"kaido");
+            yonko.Increment();
+            std::cout << yonko << std::endl;
+          
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+    }
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+    Bureaucrat yonko(1);
+    yonko.Increment();
+    std::cout << yonko << std::endl;
     try
     {
-        Bureaucrat yonko(151,"shanks");
+        yonko.Increment();
+
     }
     catch(const std::exception& e)
     {
