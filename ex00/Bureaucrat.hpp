@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:04:19 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/15 16:50:28 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:06:47 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Bureaucrat
     Bureaucrat(int grade);
     Bureaucrat(const std::string _name);
     Bureaucrat(int grade,const std::string _name);
+    Bureaucrat(const Bureaucrat& copy);
+    Bureaucrat& operator=(const Bureaucrat& other);
     void Increment();
     void Decrement();
     class GradeTooHighException : public std::exception

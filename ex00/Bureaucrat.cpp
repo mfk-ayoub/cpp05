@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/16 13:50:06 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:10:40 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,23 @@ Bureaucrat::Bureaucrat(int grade, const std::string _name)
         this->_grade = grade;
 }
 //~~~~~~~~~~~~~~~~~~~~
+
+
+Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+    : _name(copy._name) , _grade(copy._grade)
+{
+    
+}
+//~~~~~~~~~~~~~~~~~~~~
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
+{
+    if (this != &other)
+    {
+        _grade = other._grade;
+    }
+    return *this;
+}
 
 void Bureaucrat::Increment()
 {
