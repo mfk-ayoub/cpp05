@@ -1,0 +1,76 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
+/*   Updated: 2025/05/16 15:06:41 by ayel-mou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Form.hpp"
+
+Form::Form()
+    : name("baggi"), flag(false), SignGrade(1), ExecGrade(1)
+{
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Form::Form(const std::string name)
+    : name(name), flag(false), SignGrade(1), ExecGrade(1)
+{
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Form::Form(const int SignGrade, const int ExecGrade)
+    : name("baggi"), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
+{
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Form::Form(const std::string name, const int SignGrade, const int ExecGrade)
+    : name(name), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
+{
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+const std::string Form::GetName()
+{
+    return (name);
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+bool Form::GetFlag() const
+{
+    return (flag);
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+int Form::GetSignGrade() const
+{
+    return (SignGrade);
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+int Form::GetExecGrade() const
+{
+    return (ExecGrade);
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+void		Form::beSigned(const Bureaucrat &bureaucrat)
+{
+    
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Form::~Form()
+{
+}
