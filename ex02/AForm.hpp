@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:11 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/17 13:00:00 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:33:30 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private:
         const std::string name;
@@ -24,10 +24,10 @@ class Form
         const int SignGrade;
         const int ExecGrade;
     public:
-        Form();
-        Form(const std::string name);
-        Form(const int SignGrade,const int ExecGrade);
-        Form(const std::string name,const int SignGrade,const int ExecGrade);
+        AForm();
+        AForm(const std::string name);
+        AForm(const int SignGrade,const int ExecGrade);
+        AForm(const std::string name,const int SignGrade,const int ExecGrade);
         void		beSigned(const Bureaucrat &bureaucrat);
         const std::string GetName();
         bool GetFlag() const;
@@ -43,7 +43,7 @@ class Form
             public:
                 virtual const char* what() const throw();
         };
-        ~Form();
+        ~AForm();
 
 };
 

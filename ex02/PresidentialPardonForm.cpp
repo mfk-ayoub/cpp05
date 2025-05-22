@@ -1,18 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/15 11:12:27 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/22 20:29:52 by ayel-mou         ###   ########.fr       */
+/*   Created: 2025/05/22 20:34:16 by ayel-mou          #+#    #+#             */
+/*   Updated: 2025/05/22 20:39:03 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int main(void)
-{
-    return (0);
-}

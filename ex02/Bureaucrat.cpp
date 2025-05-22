@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/17 16:03:27 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:10:40 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,19 +126,6 @@ int Bureaucrat::getGrade() const
 {
     return (_grade);   
 }
-//~~~~~~~~~~~~~~~~~~~~
-void Bureaucrat::signForm(Form& form)
-{
-    try
-    {
-        form.beSigned(*this);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << _name << " couldn’t sign " << form.GetName() << " because " << e.what() << " ." << std::endl;
-    }
-    std::cout << _name << " signed " << form.GetName() << std::endl;  
-} 
 //~~~~~~~~~~~~~~~~~~~~
 
 Bureaucrat::~Bureaucrat()

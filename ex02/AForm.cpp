@@ -1,71 +1,71 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/17 15:58:34 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:34:05 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form()
+AForm::AForm()
     : name("baggi"), flag(false), SignGrade(1), ExecGrade(1)
 {
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Form::Form(const std::string name)
+AForm::AForm(const std::string name)
     : name(name), flag(false), SignGrade(1), ExecGrade(1)
 {
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Form::Form(const int SignGrade, const int ExecGrade)
+AForm::AForm(const int SignGrade, const int ExecGrade)
     : name("baggi"), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
 {
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Form::Form(const std::string name, const int SignGrade, const int ExecGrade)
+AForm::AForm(const std::string name, const int SignGrade, const int ExecGrade)
     : name(name), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
 {
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const std::string Form::GetName()
+const std::string AForm::GetName()
 {
     return (name);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-bool Form::GetFlag() const
+bool AForm::GetFlag() const
 {
     return (flag);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-int Form::GetSignGrade() const
+int AForm::GetSignGrade() const
 {
     return (SignGrade);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-int Form::GetExecGrade() const
+int AForm::GetExecGrade() const
 {
     return (ExecGrade);
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-void		Form::beSigned(const Bureaucrat &bureaucrat)
+void		AForm::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade()  <= SignGrade)
         flag = true;
@@ -74,18 +74,18 @@ void		Form::beSigned(const Bureaucrat &bureaucrat)
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const char* Form::GradeTooHighException::what() const throw()
+const char* AForm::GradeTooHighException::what() const throw()
 {
-    return ("Grade too high to sign the form");
+    return ("Grade too high to sign the Aform");
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const char* Form::GradeTooLowException::what() const throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
-    return ("Grade too low to sign the form");
+    return ("Grade too low to sign the Aform");
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Form::~Form()
+AForm::~AForm()
 {
 }

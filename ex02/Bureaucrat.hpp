@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:04:19 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/17 15:59:54 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:06:47 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
-
-class Form;
 
 class Bureaucrat
 {
@@ -45,7 +42,6 @@ class Bureaucrat
     };
     std::string  getName() const;
     int getGrade() const;
-    void signForm(Form& form);
     ~Bureaucrat();
 };
 
