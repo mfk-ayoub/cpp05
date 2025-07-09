@@ -43,7 +43,7 @@ class AForm
             public:
                 virtual const char* what() const throw();
         };
-        ~AForm();
+        virtual ~AForm();
 
 };
 
