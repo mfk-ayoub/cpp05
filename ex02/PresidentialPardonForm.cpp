@@ -12,3 +12,35 @@
 
 #include "PresidentialPardonForm.hpp"
 
+PresidentialPardonForm::PresidentialPardonForm()
+    : _name("PresidentialPardonForm"), SignGrade(25) , ExecGrade(5) , _target("default")
+
+{
+
+}
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+    : _name("PresidentialPardonForm"), SignGrade(25) , ExecGrade(5) , _target(target)
+
+{
+
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)
+{
+
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+
+}
+
+PresidentialPardonForm PresidentialPardonForm::&operator=(const PresidentialPardonForm &other)
+{
+
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+
+}

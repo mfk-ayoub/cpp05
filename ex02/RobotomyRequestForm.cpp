@@ -12,3 +12,33 @@
 
 
 #include "RobotomyRequestForm.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm()
+    : _name("robotmyrequestform") , SignGrade(72) , ExecGrade(45) , _target("default")
+{
+
+}
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+    : _name("robotmyrequestform") , SignGrade(72) , ExecGrade(45) , _target(target)
+{
+
+}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)
+{
+
+}
+
+RobotomyRequestForm RobotomyRequestForm::&operator=(const RobotomyRequestForm &other)
+{
+    
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
+{
+    
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+
+}
