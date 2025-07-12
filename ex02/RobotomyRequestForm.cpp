@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:36:36 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:36:09 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:45:36 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 
 }
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other)
-    : AForm(other)
+    : AForm(other) , _target(other._target)
 {
 
 }
@@ -36,6 +36,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
         AForm::operator=(other);
     }
     return *this;
+}
+
+const std::string& RobotomyRequestForm::GetTarget() const
+{
+    return (_target);
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const

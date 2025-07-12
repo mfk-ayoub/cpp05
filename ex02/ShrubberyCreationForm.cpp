@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 16:27:53 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:36:30 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:45:43 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
-    : AForm(other)
+    : AForm(other) , _target(other._target)
 {
 
 }
@@ -38,6 +38,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     }
     return *this;
 }
+
+const std::string&  ShrubberyCreationForm::GetTarget() const
+{
+    return (_target);
+}
+    
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {

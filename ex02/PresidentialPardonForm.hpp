@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 16:11:50 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:32:49 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:41:45 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 
         void execute(Bureaucrat const & executor) const;
+        const std::string& GetTarget() const;
 };
 
