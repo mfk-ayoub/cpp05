@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 16:27:53 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:45:43 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:49:08 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     {
         AForm::operator=(other);
     }
-    return *this;
+    return (*this);
 }
 
 const std::string&  ShrubberyCreationForm::GetTarget() const
