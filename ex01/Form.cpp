@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 05:13:41 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:21:57 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Form::Form(const std::string name, const int SignGrade, const int ExecGrade)
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const std::string Form::GetName()
+const std::string Form::GetName() const
 {
     return (name);
 }
@@ -93,8 +93,9 @@ std::ostream& operator<<(std::ostream& os, const Form& form)
     os << "Grade Sign is : " << form.GetSignGrade() << ", "
        << "Grade Execute is : " << form.GetExecGrade();
 
-    return os;
+    return (os);
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Form::~Form()

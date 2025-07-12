@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/22 20:34:05 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:28:47 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ AForm::AForm(const int SignGrade, const int ExecGrade)
 AForm::AForm(const std::string name, const int SignGrade, const int ExecGrade)
     : name(name), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
 {
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+AForm &AForm::operator=(const AForm &other)
+{
+    if (this != &other)
+    {
+        this->flag = other.GetFlag();
+    }
+    return *this;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

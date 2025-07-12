@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:11 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 05:07:05 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:20:37 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Form
         Form(const int SignGrade,const int ExecGrade);
         Form(const std::string name,const int SignGrade,const int ExecGrade);
         void		beSigned(const Bureaucrat &bureaucrat);
-        const std::string GetName();
+        const std::string GetName() const;
         bool GetFlag() const;
         int GetSignGrade() const;
         int GetExecGrade() const;
