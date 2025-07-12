@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/17 15:58:34 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 05:13:41 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,17 @@ const char* Form::GradeTooLowException::what() const throw()
     return ("Grade too low to sign the form");
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+std::ostream& operator<<(std::ostream& os, const Form& form)
+{
+    os << "Form \"" << form.GetName() << "\", ";
+    os << "Grade Sign is : " << form.GetSignGrade() << ", "
+       << "Grade Execute is : " << form.GetExecGrade();
+
+    return os;
+}
+
 
 Form::~Form()
 {

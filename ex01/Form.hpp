@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:11 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/17 13:00:00 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/12 05:07:05 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,5 @@ class Form
 
 };
 
+
+std::ostream& operator<<(std::ostream& os, const Form& form);
