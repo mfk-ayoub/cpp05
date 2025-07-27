@@ -6,13 +6,14 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 16:11:50 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:41:45 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 06:00:43 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AForm.hpp"
+
 
 class PresidentialPardonForm : public AForm
 {
@@ -27,7 +28,7 @@ class PresidentialPardonForm : public AForm
 
         PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 
-        void execute(Bureaucrat const & executor) const;
-        const std::string& GetTarget() const;
+        virtual void executeAction() const ;
+
 };
 

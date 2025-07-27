@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 16:27:53 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:49:08 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 05:43:59 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,19 @@ const std::string&  ShrubberyCreationForm::GetTarget() const
 }
     
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::executeAction() const
 {
-    (void)executor;
+    std::string filename = _target + "_shrubbery"; 
+    std::ofstream outfile( filename.c_str());
+    if (!outfile.is_open())
+        throw std::runtime_error("Could not create file");
+    
+    outfile << "    *    \n";
+    outfile << "   ***   \n";
+    outfile << "  *****  \n";
+    outfile << " ******* \n";
+    outfile << "   |||   \n";   
+    outfile.close();
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

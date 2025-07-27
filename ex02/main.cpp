@@ -6,79 +6,64 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:12:27 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/16 13:50:27 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 05:56:09 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int main(void)
+int main()
 {
-    {
-        try
-        {
-            Bureaucrat b;
-            b.Decrement();
-            b.Decrement();
-            std::cout << b << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }   
-    }
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-    {
     try
-        {
-            Bureaucrat yonko(0,"shanks");
-            std::cout << yonko << std::endl;
+    {
+        Bureaucrat kaido(1, "Kaido");
+        ShrubberyCreationForm form1("Garden");
+        RobotomyRequestForm form2("Franky");
+        PresidentialPardonForm form3("Zoro");
 
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-    }
-     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-    {
-    try
-        {
-            Bureaucrat yonko(151,"baggi");
-            std::cout << yonko << std::endl;
+        std::cout << form1 << std::endl;
+        std::cout << form2 << std::endl;
+        std::cout << form3 << std::endl;
 
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-    }
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-    {
-    try
-        {
-            Bureaucrat yonko(2,"kaido");
-            yonko.Increment();
-            std::cout << yonko << std::endl;
-          
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-    }
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-    Bureaucrat yonko(1);
-    yonko.Increment();
-    std::cout << yonko << std::endl;
-    try
-    {
-        yonko.Increment();
+        kaido.signForm(form1);
+        kaido.signForm(form2);
+        kaido.signForm(form3);
 
+        kaido.executeForm(form1);
+        kaido.executeForm(form2);
+        kaido.executeForm(form3);
     }
-    catch(const std::exception& e)
+    catch (const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
-    return (0);
+
+    try
+    {
+        Bureaucrat weakling(150, "Buggy");
+        ShrubberyCreationForm lowForm("Forest");
+
+        weakling.signForm(lowForm); 
+        weakling.executeForm(lowForm);
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+
+    try
+    {
+        PresidentialPardonForm invalidForm("Invalid");
+        Bureaucrat bob(100, "Bob");
+        invalidForm.execute(bob); 
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Execution failed: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

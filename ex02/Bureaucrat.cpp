@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/16 14:10:40 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 05:57:27 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,42 @@ std::ostream& operator<< (std::ostream& os,const Bureaucrat& b)
  
     return (os << b.getName()<< " , bureaucrat grade " << b.getGrade());
 }
+
 //~~~~~~~~~~~~~~~~~~~~
 int Bureaucrat::getGrade() const
 {
     return (_grade);   
 }
+
+void Bureaucrat::signForm(AForm& form)
+{
+    try
+    {
+        form.beSigned(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << _name << " couldn’t sign " << form.GetName() << " because " << e.what() << " ." << std::endl;
+    }
+    std::cout << _name << " signed " << form.GetName() << std::endl;  
+} 
+//~
+
+//~~~~~~~~~~~~~~~~~~~~
+void Bureaucrat::executeForm(const AForm &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << _name << " executed " << form.GetName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << _name << " couldn’t execute " << form.GetName()
+                  << " because: " << e.what() << std::endl;
+    }
+}
+
 //~~~~~~~~~~~~~~~~~~~~
 
 Bureaucrat::~Bureaucrat()

@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:04:19 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/16 14:06:47 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 05:57:22 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <string>
 #include <iostream>
 #include <exception>
-
+#include "AForm.hpp"
+class AForm;
 class Bureaucrat
 {
     private:
@@ -40,6 +41,9 @@ class Bureaucrat
         public :
             virtual const char* what() const throw();
     };
+    void signForm(AForm& form);
+    void executeForm(const AForm &form) const;
+
     std::string  getName() const;
     int getGrade() const;
     ~Bureaucrat();

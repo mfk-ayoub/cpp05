@@ -6,11 +6,12 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:28:47 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 05:52:55 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
 
 AForm::AForm()
     : name("baggi"), flag(false), SignGrade(1), ExecGrade(1)
@@ -48,7 +49,7 @@ AForm &AForm::operator=(const AForm &other)
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const std::string AForm::GetName()
+const std::string AForm::GetName() const
 {
     return (name);
 }
@@ -95,6 +96,27 @@ const char* AForm::GradeTooLowException::what() const throw()
     return ("Grade too low to sign the Aform");
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+std::ostream& operator<<(std::ostream& os, const AForm& form)
+{
+    os << "Form \"" << form.GetName() << "\", ";
+    os << "Grade Sign is : " << form.GetSignGrade() << ", "
+    << "Grade Execute is : " << form.GetExecGrade();
+    
+    return (os);
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+void AForm::execute(const Bureaucrat &executor) const
+{
+    if (!flag)
+        throw GradeTooLowException();
+    if (executor.getGrade() > ExecGrade)
+        throw GradeTooLowException();
+    executeAction();
+}
+//~~~~~~~~~~~~~~~~~~~~~~~
 
 AForm::~AForm()
 {

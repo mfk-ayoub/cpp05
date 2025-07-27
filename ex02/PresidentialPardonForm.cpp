@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 20:34:16 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:45:18 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 05:45:54 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,8 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
     return *this;
 }
 
-const std::string& PresidentialPardonForm::GetTarget() const
-{
-    return (_target);
-}
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void PresidentialPardonForm::executeAction() const
 {
-    (void)executor; 
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

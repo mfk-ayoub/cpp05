@@ -6,11 +6,13 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 16:28:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/12 11:41:56 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 06:00:50 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <cstdlib>
+#include <ctime>
 
 class RobotomyRequestForm : public AForm
 {
@@ -24,8 +26,7 @@ class RobotomyRequestForm : public AForm
         ~RobotomyRequestForm();
 
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+        virtual void executeAction() const;
 
-        void execute(Bureaucrat const & executor) const;
-        const std::string& GetTarget() const;
 
 };
