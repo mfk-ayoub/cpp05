@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/27 05:52:55 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 06:11:28 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,20 @@ AForm::AForm(const std::string name)
 AForm::AForm(const int SignGrade, const int ExecGrade)
     : name("baggi"), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
 {
+    if (SignGrade < 1 || ExecGrade < 1)
+        throw GradeTooHighException();
+    if (SignGrade > 150 || ExecGrade > 150)
+        throw GradeTooLowException();
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 AForm::AForm(const std::string name, const int SignGrade, const int ExecGrade)
     : name(name), flag(false), SignGrade(SignGrade), ExecGrade(ExecGrade)
 {
+    if (SignGrade < 1 || ExecGrade < 1)
+        throw GradeTooHighException();
+    if (SignGrade > 150 || ExecGrade > 150)
+        throw GradeTooLowException();
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

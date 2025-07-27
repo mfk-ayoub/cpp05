@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/05/16 14:10:40 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 06:09:13 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void Bureaucrat::Increment()
         _grade -= 1;
     }   
 }
-//~~~~~~~~~~~~~~~~~~~~
 
 void Bureaucrat::Decrement()
 {
