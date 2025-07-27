@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:12:27 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/27 05:56:09 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/07/27 06:55:43 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,24 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int main()
+int main(void)
 {
-    try
-    {
-        Bureaucrat kaido(1, "Kaido");
-        ShrubberyCreationForm form1("Garden");
-        RobotomyRequestForm form2("Franky");
-        PresidentialPardonForm form3("Zoro");
+    Intern someRandomIntern;
+    AForm* form;
 
-        std::cout << form1 << std::endl;
-        std::cout << form2 << std::endl;
-        std::cout << form3 << std::endl;
+    form = someRandomIntern.makeForm("robotomy request", "Bender");
+    if (form)
+        delete form;
 
-        kaido.signForm(form1);
-        kaido.signForm(form2);
-        kaido.signForm(form3);
+    form = someRandomIntern.makeForm("shrubbery creation", "42 garden");
+    if (form)
+        delete form;
 
-        kaido.executeForm(form1);
-        kaido.executeForm(form2);
-        kaido.executeForm(form3);
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    try
-    {
-        Bureaucrat weakling(150, "Buggy");
-        ShrubberyCreationForm lowForm("Forest");
-
-        weakling.signForm(lowForm); 
-        weakling.executeForm(lowForm);
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    try
-    {
-        PresidentialPardonForm invalidForm("Invalid");
-        Bureaucrat bob(100, "Bob");
-        invalidForm.execute(bob); 
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Execution failed: " << e.what() << std::endl;
-    }
+    form = someRandomIntern.makeForm("invalid form", "Nowhere");
+    if (form)
+        delete form;
 
     return 0;
 }
