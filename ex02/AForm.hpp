@@ -1,18 +1,19 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 14:15:11 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/27 05:53:24 by ayel-mou         ###   ########.fr       */
-/*                                                                            */
+/* */
+/* :::      ::::::::   */
+/* AForm.hpp                                          :+:      :+:    :+:   */
+/* +:+ +:+         +:+     */
+/* By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
+/* +#+#+#+#+#+   +#+           */
+/* Created: 2025/05/16 14:15:11 by ayel-mou          #+#    #+#             */
+/* Updated: 2025/08/08 02:05:06 by ayel-mou         ###   ########.fr       */
+/* */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Bureaucrat.hpp"
+#include <string>
 
 class Bureaucrat;
 
@@ -28,10 +29,11 @@ class AForm
         AForm(const std::string name);
         AForm(const int SignGrade,const int ExecGrade);
         AForm(const std::string name,const int SignGrade,const int ExecGrade);
-        AForm &operator=(const AForm &other); 
-        void		beSigned(const Bureaucrat &bureaucrat);
+        AForm(const AForm& other);
+        AForm& operator=(const AForm& other);
+        void beSigned(const Bureaucrat &bureaucrat);
         const std::string GetName() const;
-        bool GetFlag() const; 
+        bool GetFlag() const;
         int GetSignGrade() const;
         int GetExecGrade() const;
         virtual void executeAction() const = 0;
@@ -51,4 +53,3 @@ class AForm
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& form);
-

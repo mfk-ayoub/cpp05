@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:11 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/27 05:53:24 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/08/08 02:11:16 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class AForm
         AForm(const std::string name);
         AForm(const int SignGrade,const int ExecGrade);
         AForm(const std::string name,const int SignGrade,const int ExecGrade);
-        AForm &operator=(const AForm &other); 
+        AForm(const AForm& other);
+        AForm& operator=(const AForm& other);
         void		beSigned(const Bureaucrat &bureaucrat);
         const std::string GetName() const;
         bool GetFlag() const; 

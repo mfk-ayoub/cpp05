@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 14:15:09 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/27 06:10:56 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/08/08 02:03:42 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,20 @@ Form::Form(const std::string name, const int SignGrade, const int ExecGrade)
         throw GradeTooLowException();
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Form::Form(const Form& other) 
+    : name(other.name), flag(other.flag), SignGrade(other.SignGrade), ExecGrade(other.ExecGrade)
+{
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Form& Form::operator=(const Form& other)
+{
+    if (this != &other) 
+    {
+        this->flag = other.flag;
+    }
+    return *this;
+}
 
 const std::string Form::GetName() const
 {

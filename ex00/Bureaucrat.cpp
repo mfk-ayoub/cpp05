@@ -6,7 +6,7 @@
 /*   By: ayel-mou <ayel-mou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 07:06:12 by ayel-mou          #+#    #+#             */
-/*   Updated: 2025/07/27 06:09:13 by ayel-mou         ###   ########.fr       */
+/*   Updated: 2025/08/01 01:48:09 by ayel-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Bureaucrat::Bureaucrat(const std::string _name)
 Bureaucrat::Bureaucrat(int grade, const std::string _name)
 : _name(_name)
 {
-     if (grade < 1)
+    if (grade < 1)
         throw GradeTooHighException();
     else if (grade > 150)
         throw GradeTooLowException();
